@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { Fragment, useEffect } from "react";
 import { useFetch } from "../hook/useFetch";
 import { useParams } from "react-router-dom";
 
@@ -15,15 +15,24 @@ export const HotelIdPage = () => {
 
   console.log(response);
 
-  return <div>HolaCard</div>;
-  // <div>
-  //   {Array.from({ length: maxRating }, (_, index) => (
-  //     <i
-  //       key={index}
-  //       className={
-  //         index < Math.floor(response?.rating) ? "bx bxs-star" : "bx bx-star"
-  //       }
-  //     ></i>
-  //   ))}
-  // </div>
+  return (
+    <Fragment>
+      <div>
+        {response &&
+         (
+          <div>
+              {Array.from({ length: maxRating }, (_, index) => (
+              <i
+                key={index}
+                className={
+                  index < Math.floor(response?.rating) ? "bx bxs-star" : "bx bx-star"
+                }
+              ></i>
+            ))}
+          </div>
+        )
+        }
+      </div>
+    </Fragment>
+  )
 };
