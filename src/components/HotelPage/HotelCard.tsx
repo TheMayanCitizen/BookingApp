@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { Hotel } from "../../store/slices/types/hotels.types";
 import "./styles/HotelCard.css";
 interface Props {
@@ -6,6 +7,10 @@ interface Props {
 
 const maxRating = 5;
 export const HotelCard = ({ hotel }: Props) => {
+  const navigate = useNavigate();
+  const navigateHotelId = () => {
+    navigate(`/hotel/${hotel.id}`);
+  };
   return (
     <article className="card">
       <header className="card__header">
@@ -34,7 +39,7 @@ export const HotelCard = ({ hotel }: Props) => {
         <div className="card__price">{hotel.price}</div>
       </section>
       <footer className="card__footer">
-        <button className="card__btn" /* onClick={navigateHotelId} */>
+        <button className="card__btn" onClick={navigateHotelId}>
           See more...
         </button>
       </footer>
