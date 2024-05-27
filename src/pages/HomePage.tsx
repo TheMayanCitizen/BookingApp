@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { getHotelsThunk } from "../store/slices/hotels.slice";
 import { HotelCard } from "../components/HotelPage/HotelCard";
-import "./styles/HomePage.css";
 import { NavBar } from "../components";
 
 export const HomePage = () => {
@@ -18,7 +17,7 @@ export const HomePage = () => {
   return (
     <div>
       <NavBar/>
-      <div className="cards__container">
+      <div >
         {hotels?.map(hotel => (
           <HotelCard key={hotel.id} hotel={hotel}/>
         ))}

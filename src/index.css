@@ -1,56 +1,46 @@
-/* html {
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-} */
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-* {
-  box-sizing: border-box;
-}
-
-html {
-  font-family: "Lato", sans-serif;
-  /* filter: invert(1); */
-}
-
-body {
-  margin: 0;
-  /* background-color: #413d40;
-  color: white; */
-}
-
-h1,
-h2,
-h3,
-p,
-ul,
-hr {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-ul,
-li {
-  list-style: none;
-  padding-left: 0;
-  white-space: nowrap;
-}
-
-input,
-button {
-  font-family: inherit;
-  border: none;
-}
-
-input {
-  outline: none;
-}
-
-button {
-  cursor: pointer;
-}
-
-/* img {
-  display: block;
-  width: 100%;
-} */
+@layer components {
+    .card {
+      @apply max-w-md bg-white rounded-lg overflow-hidden shadow-lg hover:scale-110 transition-transform duration-100 cursor-pointer;
+    }
+  
+    .card__img {
+      @apply w-full block;
+    }
+  
+    .card__section {
+      @apply p-8 pb-4;
+    }
+  
+    .card__name {
+      @apply mb-4;
+    }
+  
+    .card__rating {
+      @apply flex gap-2 font-light mb-2;
+    }
+  
+    .card__location {
+      @apply text-sm mb-2;
+    }
+  
+    .card__price {
+      @apply text-lg;
+    }
+    
+    .card__price::before {
+      content: "$";
+      margin-right: 0.2em;
+    }
+  
+    .card__footer {
+      @apply mb-7;
+    }
+  
+    .card__btn {
+      @apply block mx-auto border-none py-2 px-6 rounded-xl bg-red-600 text-white font-bold hover:grayscale;
+    }
+  }

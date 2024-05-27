@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import "./styles/HotelCard.css";
 import {Hotel } from "../../hook/types/Hotel.types";
 
 

@@ -1,7 +1,7 @@
 import { Fragment, useEffect } from "react";
 import { useFetch } from "../hook/useFetch";
 import { useParams } from "react-router-dom";
-import { MapHotel,OtherHotels } from "../components";
+import { MapHotel, OtherHotels} from "../components";
 
 const maxRating = 5;
 

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 
 export const NavBar = () => {
   return (
-    <header>
+    <header >
         <h1>
             Boking <span>App</span> 
         </h1>
