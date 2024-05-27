@@ -22,7 +22,7 @@ export default counterSlice.reducer;
 
 export const getHotelsThunk = (url: string) => (dispatch: AppDispatch) => {
   axios
-    .get<Hotel[]>(url)
+    .get(url)
     .then(({ data }) => dispatch(setHotels(data)))
     .catch((error) => console.log(error));
 };

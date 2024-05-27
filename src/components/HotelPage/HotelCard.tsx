@@ -1,16 +1,20 @@
 import { useNavigate } from "react-router-dom";
-import { Hotel } from "../../store/slices/types/hotels.types";
 import "./styles/HotelCard.css";
+import {Hotel } from "../../hook/types/Hotel.types";
+
+
 interface Props {
   hotel: Hotel;
 }
 
 const maxRating = 5;
 export const HotelCard = ({ hotel }: Props) => {
+  
   const navigate = useNavigate();
   const navigateHotelId = () => {
     navigate(`/hotel/${hotel.id}`);
   };
+
   return (
     <article className="card">
       <header className="card__header">

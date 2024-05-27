@@ -3,6 +3,7 @@ import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { getHotelsThunk } from "../store/slices/hotels.slice";
 import { HotelCard } from "../components/HotelPage/HotelCard";
 import "./styles/HomePage.css";
+import { NavBar } from "../components";
 
 export const HomePage = () => {
   const hotels = useAppSelector((state) => state.hotels);
@@ -13,11 +14,13 @@ export const HomePage = () => {
     dispatch(getHotelsThunk(url));
   }, []);
 
+
   return (
     <div>
+      <NavBar/>
       <div className="cards__container">
-        {hotels?.map((hotel) => (
-          <HotelCard key={hotel.id} hotel={hotel} />
+        {hotels?.map(hotel => (
+          <HotelCard key={hotel.id} hotel={hotel}/>
         ))}
       </div>
     </div>

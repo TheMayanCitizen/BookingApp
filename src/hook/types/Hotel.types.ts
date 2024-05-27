@@ -19,6 +19,7 @@ export interface City {
   name: string;
   country: string;
   countryId: string;
+  // 
 }
 
 export interface Image {
@@ -26,3 +27,6 @@ export interface Image {
   url: string;
   hotelId: number;
 }
+export interface Father {
+  prueba : Hotel[]
+} 

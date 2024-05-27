@@ -9,7 +9,7 @@ export interface Hotel {
   createdAt: Date;
   updatedAt: Date;
   cityId: number;
-  rating: string;
+  rating: number;
   images: Image[];
   city: City;
 }
