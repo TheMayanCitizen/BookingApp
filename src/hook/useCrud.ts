@@ -4,11 +4,7 @@ import { getConfigToken } from "../services/getConfigToken";
 import type { CreateBooking } from "./types/CreateBooking.types";
 
 type Data = CreateBooking;
-// interface FuncParams {
-//   url: string;
-//   withToken: boolean;
-//   data?: Data;
-// }
+
 
 export const useCrud = () => {
   const [response, setResponse] = useState<Data[]>();

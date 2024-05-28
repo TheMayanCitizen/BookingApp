@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-import { Father, Hotel } from "./types/Hotel.types";
+import { Hotel } from "./types/Hotel.types";
 
 export const useFetch = () => {
   const [response, setResponse] = useState<Hotel | undefined>();
