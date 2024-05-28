@@ -5,7 +5,14 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors : {
+        "firs-color":"#fb4041"
+      }, 
+      dropShadow : {
+        '3xl': '2px 6px 1px #dedede',
+      }
+    },
   },
   plugins: [],
 }
