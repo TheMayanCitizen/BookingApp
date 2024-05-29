@@ -1,5 +1,10 @@
+import { Fragment } from "react"
+import { Form } from "../components"
+
 export const Login = () => {
   return (
-    <div>Login</div>
+    <Fragment>
+      <Form/>      
+    </Fragment>
   )
 }
