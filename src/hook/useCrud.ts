@@ -5,7 +5,6 @@ import type { CreateBooking } from "./types/CreateBooking.types";
 
 type Data = CreateBooking;
 
-
 export const useCrud = () => {
   const [response, setResponse] = useState<Data[]>();
 
