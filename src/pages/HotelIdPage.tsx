@@ -14,7 +14,7 @@ export const HotelIdPage = () => {
     getApi(url);
   }, [id]);
 
-  console.log(localStorage.getItem("token"))
+  // console.log(localStorage.getItem("token"))
 
   return (
     <Fragment>
@@ -63,7 +63,9 @@ export const HotelIdPage = () => {
               <p className="hotel__description">{response?.description}</p>
             </div>
             <article>
-              {localStorage.getItem("token") && (<FormReservations hotelId={id} />)}
+              {localStorage.getItem("token") && (
+                <FormReservations hotelId={id} />
+              )}
             </article>
             <OtherHotels city={response?.city} id={Number(id)} />
           </section>
