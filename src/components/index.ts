@@ -6,4 +6,6 @@ export * from "./HotelIdPage/OtherHotels";
 export * from "./HotelIdPage/FormReservations";
 export * from "./LoginPage/Form"
 export * from "./RegisterPage/RegisterForm"
+export * from "./HotelIdPage/SliderImages"
+
 
