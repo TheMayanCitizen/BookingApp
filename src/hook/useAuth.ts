@@ -3,15 +3,21 @@ import axios from "axios"
 type Inputs = {
     email : string;
     password : string;
-
+    firstName?: string;
+    lastName?: string;
+    option?: 'unknown' | 'male' | 'female' | 'other';
 }
 
 
 function useAuth() {
-
-
     // Register 
-    
+    const createUser = (data:Inputs)=>{
+        const url = 'https://hotels-api.academlo.tech/users';
+        console.log(data)
+        axios.post(url, data)
+            .then(res => console.log(res.data))
+            .catch(err => console.log(err))
+    }
 
     // Login
     const loginUser = ({email, password} :Inputs) => {
@@ -25,7 +31,7 @@ function useAuth() {
             .catch(erro => console.log(erro))
     }
 
-    return {loginUser}
+    return {loginUser, createUser}
 
 }
 export default useAuth
