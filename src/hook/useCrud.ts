@@ -2,16 +2,19 @@ import axios from "axios";
 import { useState } from "react";
 import { getConfigToken } from "../services/getConfigToken";
 import type { CreateBooking } from "./types/CreateBooking.types";
+import { Booking } from "../components/ReservationPage/types/BookCard";
 
 type Data = CreateBooking;
 
 export const useCrud = () => {
   const [response, setResponse] = useState<Data[]>();
 
+  const [booking, setBooking] = useState<Booking []>()
+
   const getApi = (url: string, withToken: boolean) => {
     axios
       .get(url, withToken ? getConfigToken() : {})
-      .then(({ data }) => setResponse(data))
+      .then(({ data }) => setBooking(data))
       .catch((err) => console.log(err));
   };
 
@@ -35,5 +38,5 @@ export const useCrud = () => {
       .catch((err) => console.log(err));
   };
 
-  return { response, getApi, postApi, deleteApi };
+  return { response, getApi, postApi, deleteApi, booking};
 };
