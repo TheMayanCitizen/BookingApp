@@ -3,6 +3,7 @@ import Inputs from "../shared/Inputs";
 import { useForm, SubmitHandler } from "react-hook-form";
 import Buttons from "../shared/Buttons";
 import useAuth from "../../hook/useAuth";
+import { Toaster, toast } from 'sonner'
 
 type Inputs = {
     firstName: string;
@@ -19,7 +20,7 @@ export const RegisterForm = () => {
 
     const onSubmit: SubmitHandler<Inputs> = (data: Inputs) => {
         createUser(data);
-
+        toast(`Bienvenido a BokkinApp ${data.firstName} 🎉`)
         reset({
             firstName : "",
             lastName:"",
@@ -31,6 +32,8 @@ export const RegisterForm = () => {
 
     return (
         <Fragment>
+            <Toaster  position="top-center"/>
+            
             <section className="py-5 px-10 w-full flex flex-col gap-5">
                 <form onSubmit={handleSubmit(onSubmit)} className="w-full md:w-2/3 bg-gray-400 p-1 mx-auto flex flex-col gap-3">
                     <Inputs 
