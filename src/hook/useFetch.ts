@@ -8,6 +8,8 @@ export const useFetch = () => {
   // Prueba
   const [prueba, setPrueba] = useState<Hotel []>([])
 
+  // Images Slider
+
   const getApi = (url: string) => {
     axios
       .get(url)
@@ -21,7 +23,16 @@ export const useFetch = () => {
       .then(({ data }) => setPrueba(data))
       .catch((error) => console.log(error));
   };
+
+  // code Prueba
+
+  const getImages = (url:string)=>{
+      axios.get(url)
+        .then(res => console.log(res.data))
+        .catch(err=> console.log(err))
+  }
+
   
 
-  return { response, getApi, getHotels, prueba};
+  return { response, getApi, getHotels, prueba, getImages};
 };

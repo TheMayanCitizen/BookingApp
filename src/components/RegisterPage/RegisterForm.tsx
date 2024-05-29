@@ -29,11 +29,9 @@ export const RegisterForm = () => {
             gender : "unknown",
         })
     }
-
     return (
         <Fragment>
             <Toaster  position="top-center"/>
-            
             <section className="py-5 px-10 w-full flex flex-col gap-5">
                 <form onSubmit={handleSubmit(onSubmit)} className="w-full md:w-2/3 bg-gray-400 p-1 mx-auto flex flex-col gap-3">
                     <Inputs 

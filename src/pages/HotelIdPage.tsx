@@ -1,7 +1,7 @@
 import { Fragment, useEffect } from "react";
 import { useFetch } from "../hook/useFetch";
 import { useParams } from "react-router-dom";
-import { FormReservations, MapHotel, OtherHotels } from "../components";
+import { FormReservations, MapHotel, OtherHotels, SliderImages } from "../components";
 
 const maxRating = 5;
 
@@ -14,7 +14,6 @@ export const HotelIdPage = () => {
     getApi(url);
   }, [id]);
 
-  console.log(localStorage.getItem("token"))
 
   return (
     <Fragment>
@@ -28,13 +27,14 @@ export const HotelIdPage = () => {
                   key={index}
                   className={
                     index < Math.floor(response?.rating)
-                      ? "bx bxs-star"
-                      : "bx bx-star"
+                    ? "bx bxs-star"
+                    : "bx bx-star"
                   }
                 ></i>
               ))}
               <span className="hotel__rating">{response?.rating}</span>
             </div>
+            <SliderImages response={response}/>
 
             <div className="hotel__img__container">
               <img
