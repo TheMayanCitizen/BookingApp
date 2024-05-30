@@ -17,6 +17,7 @@ export default {
       }, 
       maxWidth: {
         '30em': '30em',
+        'max-content': 'max-content',
       },
       dropShadow : {
         '3xl': '2px 6px 1px #dedede',
@@ -33,6 +34,9 @@ export default {
       transitionDuration: {
         '500ms': '500ms',
       },
+      // maxWidth: {
+      //   'max-content': 'max-content',
+      // },
     },
   },
   plugins: [

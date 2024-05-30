@@ -21,11 +21,11 @@ export const FilterByCity = () => {
 
   return (
     <article>
-      <h4>Cities</h4>
-      <ul>
-        <li onClick={() => handleClick(false)}>All Cities</li>
+      <h3 className="text-center py-5 font-bold">Cities</h3>
+      <ul className="space-y-2">
+        <li className="hover:p-2 hover:bg-firs-color hover:bg-opacity-60 transition-all duration-75 hover:rounded-md hover:cursor-pointer" onClick={() => handleClick(false)}>All Cities</li>
         {cities?.map((city) => (
-          <li key={city.id} onClick={() => handleClick(city.id)}>
+          <li className="hover:p-2 hover:bg-firs-color hover:bg-opacity-60 transition-all duration-75 hover:rounded-md hover:cursor-pointer" key={city.id} onClick={() => handleClick(city.id)}>
             {city.name}
           </li>
         ))}
