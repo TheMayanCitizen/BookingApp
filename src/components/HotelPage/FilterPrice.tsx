@@ -31,16 +31,16 @@ export const FilterPrice = ({ setFromTo }: Props) => {
     <article>
       <h4>Price</h4>
 
-      <form onSubmit={handleSubmit(submit)}>
-        <label>
-          <span>From:</span>
-          <input type="number" {...register("from")} />
+      <form className="space-y-3" onSubmit={handleSubmit(submit)}>
+        <label className="flex flex-col">
+          <span className="font-thin ">From:</span>
+          <input type="number" className="border-2 border-gray-300  rounded-md p-2 outline-none" {...register("from")} />
         </label>
-        <label>
-          <span>To:</span>
-          <input type="number" {...register("to")} />
+        <label className="flex flex-col">
+          <span className="font-thin ">To:</span>
+          <input type="number" className="border-2 border-gray-300  rounded-md p-2 outline-none" {...register("to")} />
         </label>
-        <button>Submit</button>
+        <button type="submit" className="p-2 rounded-md bg-firs-color w-full text-white ">Submit</button>
       </form>
     </article>
   );
