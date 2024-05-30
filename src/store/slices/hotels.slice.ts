@@ -12,7 +12,7 @@ export const counterSlice = createSlice({
   // `createSlice` will infer the state type from the `initialState` argument
   initialState,
   reducers: {
-    setHotels: (state, action: PayloadAction<Hotel[]>) => action.payload,
+    setHotels: (_, action: PayloadAction<Hotel[]>) => action.payload,
   },
 });
 
