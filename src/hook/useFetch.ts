@@ -1,12 +1,15 @@
 import axios from "axios";
 import { useState } from "react";
 import { Hotel } from "./types/Hotel.types";
+import { Cities } from "./types/Cities.types";
 
 export const useFetch = () => {
   const [response, setResponse] = useState<Hotel | undefined>();
 
+  const [cities, setCities] = useState<Cities[]>();
+
   // Prueba
-  const [prueba, setPrueba] = useState<Hotel []>([])
+  const [prueba, setPrueba] = useState<Hotel[]>([]);
 
   // Images Slider
 
@@ -26,13 +29,21 @@ export const useFetch = () => {
 
   // code Prueba
 
-  const getImages = (url:string)=>{
-      axios.get(url)
-        .then(res => console.log(res.data))
-        .catch(err=> console.log(err))
-  }
+  const getImages = (url: string) => {
+    axios
+      .get(url)
+      .then((res) => console.log(res.data))
+      .catch((err) => console.log(err));
+  };
 
-  
+  //Filter by cities
 
-  return { response, getApi, getHotels, prueba, getImages};
+  const getCities = (url: string) => {
+    axios
+      .get(url)
+      .then((res) => setCities(res.data))
+      .catch((err) => console.log(err));
+  };
+
+  return { response, getApi, getHotels, prueba, getImages, cities, getCities };
 };
