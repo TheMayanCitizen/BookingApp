@@ -18,28 +18,34 @@ export const BookCard = ({ book, deleteBooking }: Props) => {
 
   return (
     <Fragment>
-      <section>
+      <section className="w-[300px] rounded-xl overflow-hidden shadow-2xl space-y-3 ">
         <header>
           <img src={book.hotel.images[0].url} alt="" />
         </header>
-        <h3>{book.hotel.name}</h3>
-        <div>
-          {book.hotel.city.name},{book.hotel.city.country}
-        </div>
-        <p>Rate and comment this visit</p>
-        <ul>
-          <li>
-            <span>Reservation Days</span>
-            <span>{reservationDays}</span>
-          </li>
-          <li>
-            <span>Subtotal Price</span>
-            <span>${Number(book.hotel.price) * reservationDays}</span>
-          </li>
-        </ul>
-        <button onClick={handleDelete}>
-          <i className="bx bx-trash card__btn"></i>
-        </button>
+        <h3 className="font-bold text-center mt-2 mb-0 ">{book.hotel.name}</h3>
+        <article className="px-4 pb-4 space-y-2">
+          <div className="text-sm">
+            {book.hotel.city.name},{book.hotel.city.country}
+          </div>
+          <p className="text-[#3535ff] hover:underline hover:cursor-pointer text-sm">
+            Rate and comment this visit...
+          </p>
+          <ul className="text-lg">
+            <li className="flex justify-around">
+              <span>Reservation Days</span>
+              <span className="font-extralight">{reservationDays}</span>
+            </li>
+            <li className="flex justify-around">
+              <span>Subtotal Price</span>
+              <span className="font-extralight">
+                ${Number(book.hotel.price) * reservationDays}
+              </span>
+            </li>
+          </ul>
+          <button onClick={handleDelete} className="block mx-auto">
+            <i className="bx bx-trash card__btn"></i>
+          </button>
+        </article>
       </section>
     </Fragment>
   );

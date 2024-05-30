@@ -10,13 +10,10 @@ export const ReservationPage = () => {
     getApi(url, true);
   }, []);
 
-  // const print = JSON.stringify(booking);
-  console.log(booking);
-
   return (
-    <article>
-      <h2>My Reservations</h2>
-      <div>
+    <article className="container mx-auto space-y-6">
+      <h2 className="text-3xl text-center">My Reservations</h2>
+      <div className="flex flex-wrap gap-5 justify-center">
         {booking?.map((book) => (
           <BookCard key={book.id} book={book} deleteBooking={deleteApi} />
           // <h3>Reservation</h3>
